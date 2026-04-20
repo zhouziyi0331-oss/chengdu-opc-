@@ -5,6 +5,7 @@ require('dotenv').config();
 const publicRoutes = require('./routes/public');
 const protectedRoutes = require('./routes/protected');
 const adminRoutes = require('./routes/admin');
+const chengduEventsRoutes = require('./routes/chengdu-events');
 const CrawlerScheduler = require('./jobs/crawler-scheduler');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use('/api', publicRoutes);
 app.use('/api', protectedRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api', chengduEventsRoutes);
 
 // 错误处理
 app.use((err, req, res, next) => {
