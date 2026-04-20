@@ -54,7 +54,7 @@ export default function Home() {
             成都OPC中心
           </h1>
           <p className="text-3xl font-bold text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
-            一个专注于AI技能学习、资讯分享和活动组织的社群
+            连接成都AI爱好者，打造西南地区最活跃的人工智能学习社群
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link to="/about" className="btn-primary">
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
             <h3 className="text-3xl font-black mb-4 text-black">有意思</h3>
             <p className="text-gray-700 leading-relaxed text-lg font-semibold">
-              不枯燥的学习方式，有趣的活动形式，让AI学习变得轻松愉快
+              轻松有趣的学习氛围，让你在欢笑中掌握前沿AI技术
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <h3 className="text-3xl font-black mb-4 text-black">有成长</h3>
             <p className="text-gray-700 leading-relaxed text-lg font-semibold">
-              系统化的学习路径，实战项目经验，助力个人技能持续提升
+              从零基础到项目实战，清晰的进阶路线助你快速成长
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
             </div>
             <h3 className="text-3xl font-black mb-4 text-black">有体系</h3>
             <p className="text-gray-700 leading-relaxed text-lg font-semibold">
-              完整的知识体系，规范的组织架构，打造专业的AI学习社群
+              完整的课程体系，专业的导师团队，构建系统化AI知识网络
             </p>
           </div>
         </div>
@@ -134,26 +134,28 @@ export default function Home() {
           {/* 探索者号 */}
           <div className="card-white group hover:scale-105 transition-all">
             <div className="text-center mb-8">
-              <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">🚢</div>
+              <div className="icon-circle-blue mx-auto mb-6 group-hover:rotate-12 transition-transform">
+                <i className="fas fa-compass text-4xl text-white"></i>
+              </div>
               <h3 className="text-3xl font-black mb-2 text-black">探索者号</h3>
               <span className="tag-blue">新手入门</span>
             </div>
             <div className="space-y-4 text-gray-700 font-semibold">
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#6BCF7F] mr-3 mt-1 text-xl"></i>
-                <span>了解AI基础概念</span>
+                <span>掌握ChatGPT、Midjourney等主流AI工具</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#6BCF7F] mr-3 mt-1 text-xl"></i>
-                <span>学习常用AI工具</span>
+                <span>理解提示词工程与AI对话技巧</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#6BCF7F] mr-3 mt-1 text-xl"></i>
-                <span>完成新手任务</span>
+                <span>完成AI辅助创作的实战任务</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#6BCF7F] mr-3 mt-1 text-xl"></i>
-                <span>参与社群活动</span>
+                <span>结识志同道合的AI学习伙伴</span>
               </p>
             </div>
           </div>
@@ -161,26 +163,28 @@ export default function Home() {
           {/* 生产者号 */}
           <div className="card-white group hover:scale-105 transition-all bg-gradient-to-br from-[#FFD93D]/20 to-[#FF9F66]/20">
             <div className="text-center mb-8">
-              <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">🛳️</div>
+              <div className="icon-circle-orange mx-auto mb-6 group-hover:rotate-12 transition-transform">
+                <i className="fas fa-rocket text-4xl text-white"></i>
+              </div>
               <h3 className="text-3xl font-black mb-2 text-black">生产者号</h3>
               <span className="tag-orange">进阶实践</span>
             </div>
             <div className="space-y-4 text-gray-700 font-semibold">
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#FF9F66] mr-3 mt-1 text-xl"></i>
-                <span>创作AI作品</span>
+                <span>开发AI应用并发布到真实场景</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#FF9F66] mr-3 mt-1 text-xl"></i>
-                <span>参与项目协作</span>
+                <span>参与OPC竞赛与行业AI挑战赛</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#FF9F66] mr-3 mt-1 text-xl"></i>
-                <span>分享学习经验</span>
+                <span>输出技术博客与项目复盘文档</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#FF9F66] mr-3 mt-1 text-xl"></i>
-                <span>参加AI竞赛</span>
+                <span>组队攻克复杂AI工程项目</span>
               </p>
             </div>
           </div>
@@ -188,26 +192,28 @@ export default function Home() {
           {/* 领航员号 */}
           <div className="card-white group hover:scale-105 transition-all">
             <div className="text-center mb-8">
-              <div className="text-7xl mb-6 group-hover:scale-110 transition-transform">🚀</div>
+              <div className="icon-circle-purple mx-auto mb-6 group-hover:rotate-12 transition-transform">
+                <i className="fas fa-crown text-4xl text-white"></i>
+              </div>
               <h3 className="text-3xl font-black mb-2 text-black">领航员号</h3>
               <span className="tag-purple">高级进阶</span>
             </div>
             <div className="space-y-4 text-gray-700 font-semibold">
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#9B7EDE] mr-3 mt-1 text-xl"></i>
-                <span>组织社群活动</span>
+                <span>策划并主持技术分享与工作坊</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#9B7EDE] mr-3 mt-1 text-xl"></i>
-                <span>指导新手成长</span>
+                <span>一对一辅导新成员快速上手</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#9B7EDE] mr-3 mt-1 text-xl"></i>
-                <span>输出优质内容</span>
+                <span>撰写深度技术文章与教程系列</span>
               </p>
               <p className="flex items-start">
                 <i className="fas fa-check-circle text-[#9B7EDE] mr-3 mt-1 text-xl"></i>
-                <span>推动社群发展</span>
+                <span>连接产业资源推动社群影响力</span>
               </p>
             </div>
           </div>
@@ -225,8 +231,8 @@ export default function Home() {
       {featuredCompetitions.length > 0 && (
         <section className="mb-20 px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-black mb-6 text-black">推荐赛事</h2>
-            <p className="text-2xl font-bold text-gray-700">不要错过这些精彩的AI竞赛</p>
+            <h2 className="text-5xl font-black mb-6 text-black">热门赛事</h2>
+            <p className="text-2xl font-bold text-gray-700">成都及四川地区最新AI竞赛与创投机会</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -327,18 +333,18 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FF6B6B] rounded-full translate-y-1/2 -translate-x-1/2 opacity-20"></div>
 
             <div className="relative z-10">
-              <h2 className="text-5xl font-black mb-6">准备好开始你的AI之旅了吗？</h2>
+              <h2 className="text-5xl font-black mb-6">开启你的AI成长之旅</h2>
               <p className="text-2xl mb-10 font-bold text-gray-300">
-                加入成都OPC中心，与志同道合的伙伴一起探索AI的无限可能
+                在成都OPC中心，与300+AI爱好者一起学习、实践、成长
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 <Link to="/about" className="btn-primary bg-white text-black hover:bg-gray-100">
-                  <i className="fas fa-rocket"></i>
-                  立即加入
+                  <i className="fas fa-user-plus"></i>
+                  立即加入社群
                 </Link>
                 <Link to="/past-activities" className="btn-secondary border-white text-white hover:bg-white hover:text-black">
                   <i className="fas fa-images"></i>
-                  查看往期活动
+                  往期精彩回顾
                 </Link>
               </div>
             </div>

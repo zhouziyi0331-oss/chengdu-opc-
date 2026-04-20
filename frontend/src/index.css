@@ -54,6 +54,10 @@
     @apply inline-block bg-[#4ECDC4] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform -rotate-1 hover:rotate-0 transition-all shadow-lg;
   }
 
+  .tag-purple {
+    @apply inline-block bg-[#9B7EDE] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform rotate-2 hover:rotate-0 transition-all shadow-lg;
+  }
+
   /* 卡片样式 - 米色背景 */
   .card {
     @apply bg-[#FFFBF5] rounded-[40px] p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-4 border-black;
@@ -97,6 +101,10 @@
 
   .icon-circle-blue {
     @apply w-20 h-20 rounded-full bg-[#4ECDC4] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
+  }
+
+  .icon-circle-purple {
+    @apply w-20 h-20 rounded-full bg-[#9B7EDE] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
   }
 }
 
