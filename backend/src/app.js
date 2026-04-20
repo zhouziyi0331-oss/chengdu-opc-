@@ -26,10 +26,13 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: '服务器内部错误' });
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`服务器运行在端口 ${PORT}`);
-});
-
+// Vercel Serverless 函数导出
 module.exports = app;
+
+// 本地开发时启动服务器
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`服务器运行在端口 ${PORT}`);
+  });
+}
