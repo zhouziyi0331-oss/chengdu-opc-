@@ -2,74 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 全局样式 - 现代圆润风格 */
+/* Minerva风格 - 圆润、彩色、有趣 */
 @layer base {
   * {
     @apply antialiased;
   }
 
   body {
-    @apply bg-[#fefefe] text-gray-900;
+    @apply bg-[#FFF8F0] text-gray-900;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-    letter-spacing: -0.02em;
+    @apply font-black;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer components {
-  /* 按钮样式 */
+  /* 按钮样式 - 圆润药丸形状 */
   .btn {
-    @apply inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300;
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all duration-300 text-lg;
   }
 
   .btn-primary {
-    @apply bg-gray-900 text-white hover:bg-gray-800 hover:-translate-y-1 shadow-lg hover:shadow-xl;
+    @apply bg-black text-white hover:bg-gray-800 hover:scale-105 shadow-lg hover:shadow-2xl;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-gray-300 text-gray-800 hover:border-gray-900 hover:bg-gray-50 hover:-translate-y-1;
+    @apply bg-white border-3 border-black text-black hover:bg-black hover:text-white hover:scale-105 shadow-lg;
   }
 
-  /* 卡片样式 */
+  /* 彩色标签 - 倾斜效果 */
+  .tag-red {
+    @apply inline-block bg-[#FF6B6B] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform -rotate-3 hover:rotate-0 transition-all shadow-lg;
+  }
+
+  .tag-orange {
+    @apply inline-block bg-[#FF9F66] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform rotate-2 hover:rotate-0 transition-all shadow-lg;
+  }
+
+  .tag-yellow {
+    @apply inline-block bg-[#FFD93D] text-black px-6 py-3 rounded-[20px] font-bold text-sm transform -rotate-2 hover:rotate-0 transition-all shadow-lg;
+  }
+
+  .tag-green {
+    @apply inline-block bg-[#6BCF7F] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform rotate-3 hover:rotate-0 transition-all shadow-lg;
+  }
+
+  .tag-blue {
+    @apply inline-block bg-[#4ECDC4] text-white px-6 py-3 rounded-[20px] font-bold text-sm transform -rotate-1 hover:rotate-0 transition-all shadow-lg;
+  }
+
+  /* 卡片样式 - 米色背景 */
   .card {
-    @apply bg-white rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-50;
+    @apply bg-[#FFFBF5] rounded-[40px] p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-4 border-black;
   }
 
-  /* 标签样式 */
-  .tag {
-    @apply inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full font-semibold text-sm hover:bg-gray-200 transition-all;
+  .card-white {
+    @apply bg-white rounded-[40px] p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-4 border-black;
+  }
+
+  /* 圆形徽章 */
+  .badge-circle {
+    @apply w-24 h-24 rounded-full bg-black text-white flex items-center justify-center font-black text-2xl shadow-2xl border-4 border-white;
   }
 
   /* 输入框样式 */
   .input {
-    @apply w-full px-5 py-3 border-2 border-gray-200 rounded-full focus:border-gray-900 focus:outline-none transition-all;
+    @apply w-full px-6 py-4 border-3 border-black rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all font-semibold;
   }
 
   /* 统计框样式 */
   .stat-box {
-    @apply bg-gradient-to-br from-blue-50 to-white rounded-[32px] p-8 text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-50;
+    @apply bg-white rounded-[40px] p-8 text-center shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-4 border-black;
+  }
+
+  /* 彩色圆形图标容器 */
+  .icon-circle-red {
+    @apply w-20 h-20 rounded-full bg-[#FF6B6B] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
+  }
+
+  .icon-circle-orange {
+    @apply w-20 h-20 rounded-full bg-[#FF9F66] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
+  }
+
+  .icon-circle-yellow {
+    @apply w-20 h-20 rounded-full bg-[#FFD93D] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
+  }
+
+  .icon-circle-green {
+    @apply w-20 h-20 rounded-full bg-[#6BCF7F] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
+  }
+
+  .icon-circle-blue {
+    @apply w-20 h-20 rounded-full bg-[#4ECDC4] flex items-center justify-center shadow-lg transform hover:scale-110 transition-all;
   }
 }
 
 /* 自定义滚动条 */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+  background: #FFF8F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #000;
   border-radius: 10px;
+  border: 3px solid #FFF8F0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #333;
 }
 
