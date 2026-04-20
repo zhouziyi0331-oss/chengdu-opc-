@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS collaboration_projects (
 -- 赛事信息表
 CREATE TABLE IF NOT EXISTS competitions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  title VARCHAR(200) NOT NULL,
+  title VARCHAR(200) NOT NULL UNIQUE,
   description TEXT,
   category VARCHAR(50), -- 'opc_sichuan', 'opc_chengdu', 'ai_innovation', 'ai_national'
   organizer VARCHAR(200),
@@ -109,9 +109,11 @@ CREATE TABLE IF NOT EXISTS competitions (
   end_date DATE,
   registration_deadline DATE,
   prize_info TEXT,
+  prize_pool VARCHAR(100), -- 奖金池
   requirements TEXT,
   contact_info TEXT,
   cover_image VARCHAR(500),
+  tags TEXT[], -- 标签数组
   status VARCHAR(20) DEFAULT 'upcoming', -- 'upcoming', 'ongoing', 'ended'
   is_featured BOOLEAN DEFAULT false,
   created_at TIMESTAMP DEFAULT NOW(),

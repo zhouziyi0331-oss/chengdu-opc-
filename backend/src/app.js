@@ -5,6 +5,7 @@ require('dotenv').config();
 const publicRoutes = require('./routes/public');
 const protectedRoutes = require('./routes/protected');
 const adminRoutes = require('./routes/admin');
+const CrawlerScheduler = require('./jobs/crawler-scheduler');
 
 const app = express();
 
@@ -34,5 +35,14 @@ if (require.main === module) {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`服务器运行在端口 ${PORT}`);
+
+    // 启动爬虫定时任务
+    const scheduler = new CrawlerScheduler();
+    scheduler.start();
+
+    // 首次启动时立即运行一次
+    setTimeout(() => {
+      scheduler.runAll();
+    }, 5000);
   });
 }
