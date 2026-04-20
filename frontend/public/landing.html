@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都AI社群 | 人工智能创新社区</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #fefefe;
+            color: #111827;
+            line-height: 1.4;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1E2A5E, #2E3A6E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e4e;
+            transition: all 0.2s ease;
+            padding: 8px 0;
+        }
+        .nav-link:hover {
+            color: #1E2A5E;
+        }
+        .nav-btn {
+            background: #111827;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+        .nav-btn:hover {
+            background: #2d3a5e;
+            transform: translateY(-2px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .hero-pretitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #5b6e8c;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(125deg, #1F2A48, #2F3B6E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #4b5563;
+            max-width: 650px;
+            margin: 0 auto 28px;
+            line-height: 1.5;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #111827;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background: #2c3e66;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin: 48px 0 20px;
+        }
+        .tag {
+            background: #f0f2f5;
+            padding: 8px 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1f2a44;
+            letter-spacing: 0.3px;
+            transition: all 0.2s;
+            border-radius: 40px;
+        }
+        .tag:hover {
+            background: #e2e8f0;
+            transform: scale(1.02);
+        }
+
+        /* Stats 统计区域 */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+        .stat-box {
+            background: linear-gradient(145deg, #eef2ff, #ffffff);
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1E2A5E;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            color: #4b5563;
+            font-weight: 500;
+        }
+
+        /* Welcome 区域 */
+        .welcome-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            margin: 80px 0 70px;
+            align-items: center;
+        }
+        .welcome-content {
+            flex: 1.2;
+        }
+        .welcome-badge {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #6c7a91;
+            margin-bottom: 16px;
+        }
+        .welcome-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0a1128;
+        }
+        .welcome-text {
+            font-size: 1.1rem;
+            color: #3e4a5e;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid #cbd5e1;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #1f2a48;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover {
+            border-color: #1e2a5e;
+            background: #f8fafc;
+            transform: translateY(-2px);
+        }
+        .hero-image-box {
+            flex: 0.9;
+            background: linear-gradient(145deg, #eef2ff, #ffffff);
+            border-radius: 32px;
+            padding: 32px 24px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .hero-image-box i {
+            font-size: 3.2rem;
+            color: #2d3a6e;
+            margin-bottom: 24px;
+        }
+        .hero-image-box p {
+            font-size: 1rem;
+            color: #2c3e66;
+            font-weight: 500;
+        }
+
+        /* 卡片区域 */
+        .cards-section {
+            margin: 60px 0 80px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #6c7a8e;
+            margin-bottom: 16px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 32px 28px;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.12);
+        }
+        .card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #2d3a6e;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+        .card p {
+            color: #4b5565;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            font-size: 0.98rem;
+        }
+        .card-btn {
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e2a5e;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: gap 0.2s;
+            padding: 8px 0;
+            text-decoration: none;
+        }
+        .card-btn:hover {
+            gap: 14px;
+            color: #2b3c6e;
+        }
+        .card-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* 底部 */
+        .footer {
+            border-top: 1px solid #eef2f8;
+            padding: 48px 0 32px;
+            text-align: center;
+            margin-top: 40px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #1e2a5e;
+            text-decoration: none;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .welcome-content h2 {
+                font-size: 2.2rem;
+            }
+            .welcome-section {
+                flex-direction: column;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">✦ 成都AI社群</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">首页</a>
+            <a href="#projects" class="nav-link">项目展示</a>
+            <a href="#members" class="nav-link">成员</a>
+            <a href="#events" class="nav-link">活动</a>
+            <a href="#" class="nav-btn">输入访问码</a>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <div class="hero">
+        <div class="hero-pretitle">WELCOME TO CHENGDU AI</div>
+        <h1>成都领先的<br>人工智能创新社群</h1>
+        <p class="hero-desc">汇聚AI领域的创新者、开发者和创业者，共同探索人工智能的无限可能</p>
+        <a href="#" class="btn-primary" id="learnMoreBtn">了解更多 <i class="fas fa-arrow-right"></i></a>
+
+        <!-- 标签 -->
+        <div class="tags">
+            <span class="tag">AI开发</span>
+            <span class="tag">机器学习</span>
+            <span class="tag">深度学习</span>
+            <span class="tag">创新项目</span>
+        </div>
+    </div>
+
+    <!-- 统计数据 -->
+    <div class="stats-section">
+        <div class="stat-box">
+            <div class="stat-number" id="membersCount">0</div>
+            <div class="stat-label">社群成员</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" id="projectsCount">0</div>
+            <div class="stat-label">创新项目</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" id="teamsCount">0</div>
+            <div class="stat-label">活跃团队</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" id="eventsCount">0</div>
+            <div class="stat-label">即将举办活动</div>
+        </div>
+    </div>
+
+    <!-- Welcome 区域 -->
+    <div class="welcome-section">
+        <div class="welcome-content">
+            <div class="welcome-badge">✦ 关于我们</div>
+            <h2>让AI创新在成都生根发芽</h2>
+            <p class="welcome-text">我们是一群热爱AI技术的创新者，致力于打造成都最活跃的人工智能社群。在这里，你可以找到志同道合的伙伴，分享最新的技术动态，参与激动人心的项目协作。</p>
+            <div class="button-group">
+                <a href="#" class="btn-primary" id="startBtn">立即加入 <i class="fas fa-play"></i></a>
+                <a href="#" class="btn-secondary" id="projectsBtn">查看项目 <i class="fas fa-rocket"></i></a>
+                <a href="#" class="btn-secondary" id="contactBtn">联系我们 <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-image-box">
+            <i class="fas fa-brain"></i>
+            <p>✨ AI驱动的创新社群</p>
+        </div>
+    </div>
+
+    <!-- 三个核心卡片 -->
+    <div class="cards-section">
+        <div class="section-subtitle">— 我们提供什么 —</div>
+        <div class="cards-grid">
+            <!-- 卡片 1 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <h3>成员信息<br>与技能匹配</h3>
+                <p>浏览社群成员的技能、兴趣和协作需求，找到最适合你的合作伙伴，一起创造惊艳的AI项目。</p>
+                <a href="#" class="card-btn members-btn">查看成员 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- 卡片 2 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>创新项目<br>展示平台</h3>
+                <p>探索社群成员创建的优秀AI项目，从机器学习到深度学习，从NLP到计算机视觉，应有尽有。</p>
+                <a href="#" class="card-btn projects-btn">浏览项目 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- 卡片 3 -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3>线上线下<br>活动预告</h3>
+                <p>参加我们的技术分享会、工作坊和黑客松，与AI领域的专家和爱好者面对面交流学习。</p>
+                <a href="#" class="card-btn events-btn">查看活动 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 额外CTA -->
+    <div style="text-align: center; margin: 20px 0 30px;">
+        <a href="#" style="background: #f0f2f5; padding: 12px 32px; border-radius: 60px; text-decoration: none; font-weight: 600; color:#1f2a44;">✨ 探索AI资讯 <i class="fas fa-long-arrow-alt-right"></i></a>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 成都AI社群 — 人工智能创新社区. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">✦ 成都领先AI社群 · 技术创新 · 协作共赢 ✦</p>
+    </footer>
+</div>
+
+<!-- 访问码弹窗 -->
+<div id="accessCodeModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+    <div style="background: white; border-radius: 32px; padding: 40px; max-width: 500px; width: 90%; box-shadow: 0 25px 50px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px; text-align: center;">输入访问码</h2>
+        <p style="color: #6b7280; text-align: center; margin-bottom: 24px;">此内容需要访问码才能查看。请输入您的访问码。</p>
+        <input type="text" id="accessCodeInput" placeholder="请输入访问码" style="width: 100%; padding: 14px 20px; border: 2px solid #e5e7eb; border-radius: 50px; font-size: 1rem; margin-bottom: 20px; outline: none;">
+        <div id="errorMsg" style="color: #ef4444; text-align: center; margin-bottom: 16px; display: none;"></div>
+        <div style="display: flex; gap: 12px;">
+            <button id="verifyBtn" style="flex: 1; background: #111827; color: white; padding: 14px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem;">确认</button>
+            <button id="cancelBtn" style="flex: 1; background: #f3f4f6; color: #374151; padding: 14px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem;">取消</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // API配置
+    const API_URL = 'http://localhost:3000/api';
+
+    // 检查是否已登录
+    const isAuthenticated = !!localStorage.getItem('access_token');
+
+    // 获取统计数据
+    async function fetchStats() {
+        try {
+            const response = await fetch(`${API_URL}/stats`);
+            const data = await response.json();
+
+            // 动画显示数字
+            animateNumber('membersCount', data.membersCount);
+            animateNumber('projectsCount', data.projectsCount);
+            animateNumber('teamsCount', data.teamsCount);
+            animateNumber('eventsCount', data.eventsCount);
+        } catch (error) {
+            console.error('获取统计数据失败:', error);
+        }
+    }
+
+    // 数字动画
+    function animateNumber(elementId, target) {
+        const element = document.getElementById(elementId);
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 20);
+    }
+
+    // 显示访问码弹窗
+    function showAccessCodeModal() {
+        const modal = document.getElementById('accessCodeModal');
+        modal.style.display = 'flex';
+    }
+
+    // 隐藏访问码弹窗
+    function hideAccessCodeModal() {
+        const modal = document.getElementById('accessCodeModal');
+        modal.style.display = 'none';
+        document.getElementById('accessCodeInput').value = '';
+        document.getElementById('errorMsg').style.display = 'none';
+    }
+
+    // 验证访问码
+    async function verifyAccessCode() {
+        const code = document.getElementById('accessCodeInput').value.trim();
+        const errorMsg = document.getElementById('errorMsg');
+
+        if (!code) {
+            errorMsg.textContent = '请输入访问码';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_URL}/auth/verify`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                localStorage.setItem('access_token', data.token);
+                localStorage.setItem('member_name', data.memberName || '');
+                hideAccessCodeModal();
+                alert('✨ 验证成功！欢迎加入成都AI社群');
+                location.reload();
+            } else {
+                errorMsg.textContent = data.error || '验证失败，请检查访问码';
+                errorMsg.style.display = 'block';
+            }
+        } catch (error) {
+            errorMsg.textContent = '网络错误，请稍后重试';
+            errorMsg.style.display = 'block';
+        }
+    }
+
+    // 事件监听
+    document.getElementById('learnMoreBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!isAuthenticated) {
+            showAccessCodeModal();
+        } else {
+            window.location.href = '/projects';
+        }
+    });
+
+    document.getElementById('startBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        showAccessCodeModal();
+    });
+
+    document.getElementById('projectsBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!isAuthenticated) {
+            showAccessCodeModal();
+        } else {
+            window.location.href = '/projects';
+        }
+    });
+
+    document.getElementById('contactBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('📬 联系邮箱: contact@chengdu-ai.com\n微信: ChengduAI');
+    });
+
+    document.querySelectorAll('.members-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isAuthenticated) {
+                showAccessCodeModal();
+            } else {
+                window.location.href = '/members';
+            }
+        });
+    });
+
+    document.querySelectorAll('.projects-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isAuthenticated) {
+                showAccessCodeModal();
+            } else {
+                window.location.href = '/projects';
+            }
+        });
+    });
+
+    document.querySelectorAll('.events-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isAuthenticated) {
+                showAccessCodeModal();
+            } else {
+                window.location.href = '/events';
+            }
+        });
+    });
+
+    document.getElementById('verifyBtn').addEventListener('click', verifyAccessCode);
+    document.getElementById('cancelBtn').addEventListener('click', hideAccessCodeModal);
+
+    document.getElementById('accessCodeInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            verifyAccessCode();
+        }
+    });
+
+    // 页面加载时获取统计数据
+    fetchStats();
+</script>
+</body>
+</html>

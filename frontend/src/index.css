@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 - 现代圆润风格 */
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-[#fefefe] text-gray-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* 按钮样式 */
+  .btn {
+    @apply inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-gray-900 text-white hover:bg-gray-800 hover:-translate-y-1 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-gray-300 text-gray-800 hover:border-gray-900 hover:bg-gray-50 hover:-translate-y-1;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-50;
+  }
+
+  /* 标签样式 */
+  .tag {
+    @apply inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full font-semibold text-sm hover:bg-gray-200 transition-all;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply w-full px-5 py-3 border-2 border-gray-200 rounded-full focus:border-gray-900 focus:outline-none transition-all;
+  }
+
+  /* 统计框样式 */
+  .stat-box {
+    @apply bg-gradient-to-br from-blue-50 to-white rounded-[32px] p-8 text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-50;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
