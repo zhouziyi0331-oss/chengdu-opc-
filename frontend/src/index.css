@@ -30,7 +30,7 @@
   }
 
   .btn-secondary {
-    @apply bg-white border-3 border-black text-black hover:bg-black hover:text-white hover:scale-105 shadow-lg;
+    @apply bg-white border-4 border-black text-black hover:bg-black hover:text-white hover:scale-105 shadow-lg;
   }
 
   /* 彩色标签 - 倾斜效果 */
