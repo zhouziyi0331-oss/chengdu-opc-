@@ -70,7 +70,7 @@
 
   /* 输入框样式 */
   .input {
-    @apply w-full px-6 py-4 border-3 border-black rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all font-semibold;
+    @apply w-full px-6 py-4 border-4 border-black rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all font-semibold;
   }
 
   /* 统计框样式 */
