@@ -37,6 +37,7 @@ export const getProjects = () => api.get('/projects');
 // 管理员API
 export const getAccessCodes = () => api.get('/admin/access-codes');
 export const createAccessCode = (data) => api.post('/admin/access-codes', data);
+export const generateAccessCodes = (data) => api.post('/admin/access-codes/generate', data);
 export const deleteAccessCode = (id) => api.delete(`/admin/access-codes/${id}`);
 
 export const getAdminActivities = () => api.get('/admin/activities');
@@ -45,6 +46,12 @@ export const updateActivity = (id, data) => api.put(`/admin/activities/${id}`, d
 export const deleteActivity = (id) => api.delete(`/admin/activities/${id}`);
 export const addActivityPhoto = (id, data) => api.post(`/admin/activities/${id}/photos`, data);
 export const deleteActivityPhoto = (activityId, photoId) => api.delete(`/admin/activities/${activityId}/photos/${photoId}`);
+
+// 活动管理别名（Events）
+export const getEvents = () => api.get('/admin/activities');
+export const createEvent = (data) => api.post('/admin/activities', data);
+export const updateEvent = (id, data) => api.put(`/admin/activities/${id}`, data);
+export const deleteEvent = (id) => api.delete(`/admin/activities/${id}`);
 
 export const getAdminMembers = () => api.get('/admin/members');
 export const createMember = (data) => api.post('/admin/members', data);
@@ -73,5 +80,14 @@ export const deleteResource = (id) => api.delete(`/admin/resources/${id}`);
 
 export const getCommunityInfo = () => api.get('/admin/community-info');
 export const updateCommunityInfo = (data) => api.put('/admin/community-info', data);
+
+// 团队相关API（缺失的）
+export const getTeams = () => api.get('/teams');
+export const getTeamPosts = (teamId) => api.get(`/teams/${teamId}/posts`);
+export const createTeam = (data) => api.post('/admin/teams', data);
+export const createTeamPost = (teamId, data) => api.post(`/admin/teams/${teamId}/posts`, data);
+
+// AI资讯API（缺失的）
+export const getNews = (params) => api.get('/news', { params });
 
 export default api;
