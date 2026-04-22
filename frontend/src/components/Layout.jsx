@@ -21,9 +21,10 @@ export default function Layout({ children }) {
       <nav className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/logo.jpg" alt="成都OPC中心" className="h-12 w-12 object-contain rounded-lg" />
               <span className="text-2xl font-extrabold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                ✦ 成都OPC中心
+                成都OPC中心
               </span>
             </Link>
 
