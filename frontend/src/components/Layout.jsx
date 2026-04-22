@@ -9,7 +9,7 @@ export default function Layout({ children }) {
     { path: '/', label: '首页', public: true },
     { path: '/about', label: '关于我们', public: true },
     { path: '/competitions', label: '赛事信息', public: true },
-    { path: '/past-activities', label: '过往活动', public: true },
+    { path: '/activities', label: '活动回顾', public: true },
     { path: '/works', label: '成员作品', public: false },
     { path: '/resources', label: '学习资源', public: true },
     { path: '/members', label: '成员信息', public: false },

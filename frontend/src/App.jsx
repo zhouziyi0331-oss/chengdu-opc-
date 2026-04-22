@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Competitions from './pages/Competitions';
 import PastActivities from './pages/PastActivities';
+import Activities from './pages/Activities';
 import Works from './pages/Works';
 import Resources from './pages/Resources';
 import Projects from './pages/Projects';
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/competitions" element={<Competitions />} />
                 <Route path="/past-activities" element={<PastActivities />} />
+                <Route path="/activities" element={<Activities />} />
                 <Route path="/resources" element={<Resources />} />
                 <Route
                   path="/works"
